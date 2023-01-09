@@ -1,16 +1,27 @@
+@font-face {
+  font-family: "ImcreSoojin";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "ImcreSoojin";
+}
 body,
 html {
   margin: 0;
   padding: 0;
   height: 100vh;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRstPU4Hz6B1N4uLOsvGrvPsufgYq7cJYR3bQ&usqp=CAU);
 }
 
 .one {
   width: 100%;
   height: 50vh;
   position: absolute;
-
-  border-bottom: 5px solid black;
+  border: 3px solid black;
   box-sizing: border-box;
   background-color: red;
 }
@@ -19,13 +30,16 @@ html {
   height: 50vh;
   position: absolute;
   top: 50vh;
-  border: 1px solid black;
-
+  border: 3px solid black;
+  background-color: #fff;
+  border-top: none;
   box-sizing: border-box;
 }
 
 .Bumo {
   position: relative;
-  width: 100%;
+  width: 720px;
   height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 }
