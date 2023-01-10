@@ -19,6 +19,7 @@ const MainPage = () => {
     console.log(data);
     setPokemonInfo(data);
     setIsLoad(true);
+    setPokemonInput("");
   };
 
   const whoPokemon = async () => {
@@ -55,6 +56,7 @@ const MainPage = () => {
             <S.PokemonNameSubmitButton
               onClick={() => {
                 toast.success(`${pokemonInput}을 잡았다!`);
+                getPokemon();
               }}
             >
               {`${pokemonInput}`} 넌내꺼야!
