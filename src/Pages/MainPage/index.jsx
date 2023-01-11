@@ -15,7 +15,7 @@ const MainPage = () => {
   const randomNumber = parseInt(Math.random() * 500);
   const [middel, setMiddle] = useState(true);
   const [hint, setHint] = useState(false);
-
+  const [callPokemon, setCallPokemon] = useState(false);
   const [point, setPoint] = useState(0);
 
   const getPokemon = async () => {
@@ -40,46 +40,43 @@ const MainPage = () => {
   };
 
   const showHint = () => {
-    const isShow = window.confirm(
-      "오박사님은 약간의 힌트를 알려주십니다. 힌트를 받으시겠습니까?"
-    );
-    if (isShow) {
-      setHint(true);
-      setHideElement(false);
-    } else {
-      window.alert("화이팅!");
-    }
+    setHideElement(false);
+    setCallPokemon(true);
   };
 
-  const checkAnswer = () => {
+  const checkAnswer = async () => {
     if (pokemonName.names[2].name === pokemonInput) {
       toast.success(`${pokemonInput}을 잡았다!`);
       whoPokemon();
       getPokemon();
       setPoint(point + 1);
+      localStorage.setItem("id", point);
+
+      console.log("응인;애", point);
     } else {
-      if (point === 0) {
-        toast.error(`앗 야생 포켓몬이 도망가버렸다!`);
-        whoPokemon();
-        getPokemon();
-        setPokemonInput("");
-      } else {
+      toast.error(`앗 야생 포켓몬이 도망가버렸다!`);
+      whoPokemon();
+      getPokemon();
+      setPokemonInput("");
+      if (point > 0) {
         setPoint(point - 1);
-        toast.error(`앗 야생 포켓몬이 도망가버렸다!`);
-        whoPokemon();
-        getPokemon();
-        setPokemonInput("");
+        localStorage.setItem("id", point);
       }
     }
   };
 
   useEffect(() => {
+    setPoint(localStorage.getItem("id"));
     getPokemon();
     whoPokemon();
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("id", point);
+  }, [point]);
+
   return (
-    <div>
+    <dic className="lllll">
       <S.Container>
         {middel && (
           <S.PokemonWrap>
@@ -92,9 +89,36 @@ const MainPage = () => {
             )}
           </S.PokemonWrap>
         )}
+        {callPokemon && (
+          <S.IsHint>
+            <S.HintGuide>안녕 힌트가 필요해? 오박사님을 불러봐!</S.HintGuide>
+            <S.GuideButtonWrap>
+              <S.GuideButton
+                backGroundCl="red"
+                color="white"
+                onClick={() => {
+                  setHideElement(true);
+                  setCallPokemon(false);
+                }}
+              >
+                됐어요~
+              </S.GuideButton>
+              <S.GuideButton
+                backGroundCl="red"
+                color="white"
+                onClick={() => {
+                  setHint(true);
+                  setCallPokemon(false);
+                }}
+              >
+                박사님!
+              </S.GuideButton>
+            </S.GuideButtonWrap>
+          </S.IsHint>
+        )}
         <S.UpBall>
           <S.WrapPoint>
-            <S.Point>점수 : {point}</S.Point>
+            <S.Point>점수 : {localStorage.getItem("id")}</S.Point>
           </S.WrapPoint>
           <S.UpHeader>
             <S.Logo src={PokemonLogo} />
@@ -139,7 +163,7 @@ const MainPage = () => {
                   showHint();
                 }}
               >
-                오박사 부르기
+                힌트?
               </S.OboxaTitle>
             </S.CallOboxa>
           )}
@@ -163,7 +187,7 @@ const MainPage = () => {
           )}
         </S.DownBall>
       </S.Container>
-    </div>
+    </dic>
   );
 };
 

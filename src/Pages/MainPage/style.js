@@ -156,7 +156,6 @@ export const PokemonNameSubmitButton = styled.button`
   cursor: pointer;
   @media screen and (max-width: 720px) {
     width: 60vw;
-    height: 20vw;
   }
 `;
 
@@ -253,19 +252,43 @@ export const PokemonHint = styled.p`
     font-size: 4vw;
   }
 `;
-// export const CallPokemonDoctor = styled.div`
-//   position: absolute;
-//   z-index: 99999999;
-//   top: 51%;
-//   right: 2%;
-// `;
 
-// export const CallBtn = styled.button`
-//   font-size: 20px;
-//   background: none;
-//   border: none;
-//   cursor: pointer;
-//   &:hover {
-//     color: red;
-//   }
-// `;
+export const IsHint = styled.div`
+  width: 500px;
+  height: 300px;
+  background-color: #fff;
+  border: 3px solid #000;
+  position: absolute;
+  z-index: 9999999;
+  top: 50%;
+  left: 50%;
+  border-radius: 30px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+export const HintGuide = styled.p`
+  font-size: 25px;
+  color: black;
+`;
+
+export const GuideButtonWrap = styled.div`
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-around;
+  width: 100%;
+`;
+
+export const GuideButton = styled.button`
+  width: 200px;
+  height: 70px;
+  border: none;
+  font-size: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: ${(props) => props.backGroundCl};
+  color: ${(props) => props.color};
+`;
