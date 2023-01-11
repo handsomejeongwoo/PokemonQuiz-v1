@@ -67,7 +67,9 @@ export const Logo = styled.img`
   }
 `;
 
-export const WrapPoint = styled.div``;
+export const WrapPoint = styled.div`
+  margin-left: 40px;
+`;
 
 export const Point = styled.p`
   font-size: 30px;
