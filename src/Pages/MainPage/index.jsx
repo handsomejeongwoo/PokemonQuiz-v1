@@ -27,7 +27,6 @@ const MainPage = () => {
     setPokemonInfo(data);
     setIsLoad(true);
     setPokemonInput("");
-    console.log(pokemonInput);
   };
 
   const whoPokemon = async () => {
@@ -75,64 +74,6 @@ const MainPage = () => {
 
   return (
     <div>
-      {/* <S.Container>
-        {hint && (
-          <S.HintWrqp>
-            <S.PokemonMaster></S.PokemonMaster>
-            <S.HintTitle>
-              <S.ReturnMainBtn
-                onClick={() => {
-                  setHideElement(true);
-                  setHint(false);
-                }}
-              >
-                X
-              </S.ReturnMainBtn>
-              {hint && (
-               
-              )}
-            </S.HintTitle>
-          </S.HintWrqp>
-        )}
-        <S.WrapPoint>
-          <S.Point>점수 : {point}</S.Point>
-        </S.WrapPoint>
-        <S.KokemonLogo />
-        <S.Dlwjddn>
-          {isLoad && (
-            <S.PokemonImg
-              src={pokemonInfo.sprites.front_default}
-            ></S.PokemonImg>
-          )}
-        </S.Dlwjddn>
-        <S.AnserWrap>
-          {hideElement && (
-            <S.PokemonNameInput
-              placeholder="포켓몬의 이름은?"
-              
-            />
-          )}
-          {hideElement && (
-            <div>
-              <S.PokemonNameSubmitButton
-                onClick={() => {
-                }}
-              >
-                {`${pokemonInput}`} 넌내꺼야!
-              </S.PokemonNameSubmitButton>
-            </div>
-          )}
-        </S.AnserWrap>
-        <S.CallPokemonDoctor>
-          <S.CallBtn
-            onClick={() => {
-              
-            }}
-          >
-            박사님 ~
-          </S.CallBtn>
-        </S.CallPokemonDoctor>
-      </S.Container> */}
       <S.Container>
         {middel && (
           <S.PokemonWrap>
