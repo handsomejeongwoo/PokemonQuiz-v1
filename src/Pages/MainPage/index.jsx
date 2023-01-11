@@ -12,7 +12,7 @@ const MainPage = () => {
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonInput, setPokemonInput] = useState("");
   const [hideElement, setHideElement] = useState(true);
-  const randomNumber = parseInt(Math.random() * 152);
+  const randomNumber = parseInt(Math.random() * 500);
   const [middel, setMiddle] = useState(true);
   const [hint, setHint] = useState(false);
 
