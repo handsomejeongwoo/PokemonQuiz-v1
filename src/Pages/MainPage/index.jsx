@@ -21,12 +21,17 @@ const MainPage = () => {
   const getPokemon = async () => {
     const { data } = await axios({
       url: `https://pokeapi.co/api/v2/pokemon/${randomNumber}/`,
-
       method: "get",
     });
     setPokemonInfo(data);
     setIsLoad(true);
     setPokemonInput("");
+  };
+
+  const activeEnter = (e) => {
+    if (e.key === "Enter") {
+      checkAnswer();
+    }
   };
 
   const whoPokemon = async () => {
@@ -50,6 +55,7 @@ const MainPage = () => {
       whoPokemon();
       getPokemon();
       setPoint(point + 1);
+      setPokemonInput("");
       localStorage.setItem("id", point);
     } else {
       toast.error(`앗 야생 포켓몬이 도망가버렸다!`);
@@ -102,7 +108,9 @@ const MainPage = () => {
         )}
         {callPokemon && (
           <S.IsHint>
-            <S.HintGuide>안녕 힌트가 필요해? 오박사님을 불러봐!</S.HintGuide>
+            <S.HintGuide>
+              안녕 포켓몬정보가 궁금해? 오박사님을 불러봐!
+            </S.HintGuide>
             <S.GuideButtonWrap>
               <S.GuideButton
                 backGroundCl="red"
@@ -131,6 +139,7 @@ const MainPage = () => {
           <S.WrapPoint>
             <S.Point>점수 : {localStorage.getItem("id")}</S.Point>
           </S.WrapPoint>
+
           <S.UpHeader>
             <S.Logo src={PokemonLogo} />
             <S.MainTitle>포켓몬의 이름을 입력하자!</S.MainTitle>
@@ -174,12 +183,12 @@ const MainPage = () => {
                   showHint();
                 }}
               >
-                힌트?
+                포켓몬 정보
               </S.OboxaTitle>
             </S.CallOboxa>
           )}
           {hideElement && (
-            <S.DownBallContent>
+            <S.DownBallContent onKeyPress={activeEnter}>
               <S.PokemonNameInput
                 placeholder="포켓몬의 이름은?"
                 value={pokemonInput}
