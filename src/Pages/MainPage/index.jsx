@@ -64,8 +64,15 @@ const MainPage = () => {
   };
 
   useEffect(() => {
+    if (localStorage.getItem("id") == undefined) {
+      localStorage.setItem("id", 0);
+    }
     const getPokemonPoint = parseInt(localStorage.getItem("id"));
-    if (getPokemonPoint == null || getPokemonPoint == undefined) {
+    if (
+      getPokemonPoint == null ||
+      getPokemonPoint == undefined ||
+      getPokemonPoint == NaN
+    ) {
       localStorage.setItem("id", 0);
       getPokemonPoint = parseInt(localStorage.getItem("id"));
     }
