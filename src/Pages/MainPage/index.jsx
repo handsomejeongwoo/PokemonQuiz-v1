@@ -51,8 +51,6 @@ const MainPage = () => {
       getPokemon();
       setPoint(point + 1);
       localStorage.setItem("id", point);
-
-      console.log("응인;애", point);
     } else {
       toast.error(`앗 야생 포켓몬이 도망가버렸다!`);
       whoPokemon();
@@ -66,7 +64,13 @@ const MainPage = () => {
   };
 
   useEffect(() => {
-    setPoint(localStorage.getItem("id"));
+    const getPokemonPoint = parseInt(localStorage.getItem("id"));
+    if (getPokemonPoint == null || getPokemonPoint == undefined) {
+      localStorage.setItem("id", 0);
+      getPokemonPoint = parseInt(localStorage.getItem("id"));
+    }
+    setPoint(getPokemonPoint);
+
     getPokemon();
     whoPokemon();
   }, []);
@@ -76,7 +80,7 @@ const MainPage = () => {
   }, [point]);
 
   return (
-    <dic className="lllll">
+    <dic>
       <S.Container>
         {middel && (
           <S.PokemonWrap>
