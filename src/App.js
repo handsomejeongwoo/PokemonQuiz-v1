@@ -12,10 +12,6 @@ function App() {
     <BrowserRouter>
       <ToastContainer />
       <div className="App">
-        <div className="Bumo">
-          <div className="one"></div>
-          <div className="two"></div>
-        </div>
         <P.MainPage />
       </div>
     </BrowserRouter>

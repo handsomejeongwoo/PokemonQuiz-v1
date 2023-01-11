@@ -1,59 +1,137 @@
 import styled from "styled-components";
-import PokemonLogo from "../../imgs/pokemonLogo.png";
-import pokemonMaster from "../../imgs/pokemonMaster.png";
+
 export const Container = styled.div`
   height: 100vh;
   width: 720px;
   margin: 0 auto;
   position: relative;
-  display: flex;
-  justify-content: center;
-`;
 
-export const KokemonLogo = styled.div`
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  position: absolute;
-  background-image: url(${PokemonLogo});
-  background-position-x: 50%;
-  background-position-y: 10%;
-`;
-
-export const PokemonImg = styled.img`
-  width: 230px;
-  height: 230px;
-`;
-
-export const Dlwjddn = styled.div`
-  width: 280px;
-  height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: #fff;
-  position: absolute;
-  border: 3px solid black;
-  box-sizing: border-box;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  &:hover {
-    background-color: #ff6464;
-    transition: ease-in-out 0.5s;
+  @media screen and (max-width: 720px) {
+    width: 100vw;
+    height: 100vh;
   }
 `;
 
-export const AnserWrap = styled.div`
+export const MainTitle = styled.p`
+  color: #fff;
+  @media screen and (max-width: 720px) {
+    font-size: 5vw;
+  }
+`;
+
+export const UpBall = styled.div`
+  width: 100%;
+  position: relative;
+  height: 50%;
+  background-color: red;
+  border: 4px solid #000;
+  box-sizing: border-box;
+  border-bottom: none;
+`;
+
+export const CallOboxa = styled.div`
   position: absolute;
-  bottom: 25%;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+`;
+
+export const DownBall = styled.div`
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 4px solid #000;
+  box-sizing: border-box;
+  position: relative;
+`;
+
+export const UpHeader = styled.div`
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  flex-direction: column;
+  font-size: 30px;
+`;
+
+export const Logo = styled.img`
+  width: 400px;
+  @media screen and (max-width: 720px) {
+    width: 60vw;
+  }
+`;
+
+export const WrapPoint = styled.div``;
+
+export const Point = styled.p`
+  font-size: 30px;
+  color: #fff;
+`;
+
+export const PokemonWrap = styled.div`
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border-radius: 50%;
+  border: 4px solid #000;
+  box-sizing: border-box;
+  background-color: #fff;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  @media screen and (max-width: 720px) {
+    width: 30vw;
+    height: 30vw;
+  }
+`;
+
+export const PokemonImg = styled.img`
+  width: 180px;
+  height: 180px;
+  @media screen and (max-width: 720px) {
+    width: 30vw;
+    height: 30vw;
+  }
+`;
+
+export const DownBallContent = styled.div`
+  width: 100%;
+  height: 40%;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const OboxaTitle = styled.button`
+  font-size: 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  &:hover {
+    color: red;
+  }
+  @media screen and (max-width: 720px) {
+    font-size: 5vw;
+  }
 `;
 
 export const PokemonNameInput = styled.input`
   text-align: center;
-  width: 10vw;
-  height: 3vw;
+  width: 250px;
+  height: 50px;
   font-size: 28px;
   border: none;
   border-bottom: 4px solid gray;
@@ -62,30 +140,35 @@ export const PokemonNameInput = styled.input`
     outline: none;
     border-bottom: 4px solid red;
   }
+  @media screen and (max-width: 720px) {
+    width: 30vw;
+    font-size: 4vw;
+  }
 `;
 
 export const PokemonNameSubmitButton = styled.button`
-  width: 20vw;
-  height: 4vw;
-  position: absolute;
-  margin-top: 50px;
+  width: 400px;
+  height: 90px;
   font-size: 25px;
-  left: 50%;
   color: #fff;
   background-color: red;
   border: none;
   cursor: pointer;
-  transform: translateX(-50%);
+  @media screen and (max-width: 720px) {
+    width: 60vw;
+    height: 20vw;
+  }
 `;
 
-export const WrapPoint = styled.div`
+export const PokemonMaster = styled.img`
+  background-repeat: no-repeat;
   position: absolute;
-  left: 30px;
-`;
-
-export const Point = styled.p`
-  font-size: 30px;
-  color: #fff;
+  bottom: 0;
+  right: 0;
+  @media screen and (max-width: 720px) {
+    width: 55vw;
+    height: 40vw;
+  }
 `;
 
 export const HintWrqp = styled.div`
@@ -94,28 +177,23 @@ export const HintWrqp = styled.div`
   bottom: 0px;
 `;
 
-export const PokemonMaster = styled.div`
-  width: 300px;
-  height: 300px;
-  background-image: url(${pokemonMaster});
-  background-repeat: no-repeat;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-`;
-
 export const HintTitle = styled.div`
   width: 400px;
   height: 300px;
   position: absolute;
-  bottom: 10%;
-  left: 20px;
+  left: 2%;
   z-index: 9999999999;
   border: 4px solid #000;
   border-radius: 20px;
   background-color: #fff;
   box-sizing: border-box;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 720px) {
+    width: 60vw;
+    height: 50vw;
+  }
 `;
 
 export const ReturnMainBtn = styled.button`
@@ -130,8 +208,6 @@ export const ReturnMainBtn = styled.button`
 `;
 
 export const PokemonInfoTitle = styled.div`
-  width: 100%;
-  height: 100%;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -139,23 +215,56 @@ export const PokemonInfoTitle = styled.div`
   text-align: center;
 `;
 
-export const PokemonInfo = styled.p`
-  font-size: 20px;
+export const PokemonInfo = styled.div`
+  font-size: 25px;
+  @media screen and (max-width: 720px) {
+    font-size: 4vw;
+  }
 `;
 
-export const CallPokemonDoctor = styled.div`
+export const PokemonHintContent = styled.div`
   position: absolute;
-  z-index: 99999999;
-  top: 51%;
-  right: 2%;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @media screen and (max-width: 720px) {
+    width: 60vw;
+    height: 50vw;
+  }
 `;
-
-export const CallBtn = styled.button`
+export const CloseButton = styled.button`
   font-size: 20px;
   background: none;
   border: none;
+  float: right;
   cursor: pointer;
   &:hover {
     color: red;
   }
+  @media screen and (max-width: 720px) {
+    font-size: 4vw;
+  }
 `;
+export const PokemonHint = styled.p`
+  font-size: 24px;
+  @media screen and (max-width: 720px) {
+    font-size: 4vw;
+  }
+`;
+// export const CallPokemonDoctor = styled.div`
+//   position: absolute;
+//   z-index: 99999999;
+//   top: 51%;
+//   right: 2%;
+// `;
+
+// export const CallBtn = styled.button`
+//   font-size: 20px;
+//   background: none;
+//   border: none;
+//   cursor: pointer;
+//   &:hover {
+//     color: red;
+//   }
+// `;

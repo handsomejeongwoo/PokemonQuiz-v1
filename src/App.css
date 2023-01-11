@@ -11,35 +11,9 @@
 }
 body,
 html {
+  width: 100%;
+  height: 100vh;
+
   margin: 0;
   padding: 0;
-  height: 100vh;
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRstPU4Hz6B1N4uLOsvGrvPsufgYq7cJYR3bQ&usqp=CAU);
-}
-
-.one {
-  width: 100%;
-  height: 50vh;
-  position: absolute;
-  border: 3px solid black;
-  box-sizing: border-box;
-  background-color: red;
-}
-.two {
-  width: 100%;
-  height: 50vh;
-  position: absolute;
-  top: 50vh;
-  border: 3px solid black;
-  background-color: #fff;
-  border-top: none;
-  box-sizing: border-box;
-}
-
-.Bumo {
-  position: relative;
-  width: 720px;
-  height: 100%;
-  left: 50%;
-  transform: translateX(-50%);
 }
