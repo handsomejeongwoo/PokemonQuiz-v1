@@ -236,6 +236,7 @@ export const PokemonHintContent = styled.div`
 export const CloseButton = styled.button`
   font-size: 20px;
   background: none;
+  z-index: 999999;
   border: none;
   float: right;
   cursor: pointer;

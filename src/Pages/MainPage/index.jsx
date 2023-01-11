@@ -58,12 +58,18 @@ const MainPage = () => {
       getPokemon();
       setPoint(point + 1);
     } else {
-      toast.error(`앗 야생 포켓몬이 도망가버렸다!`);
-      whoPokemon();
-      getPokemon();
-      setPoint(point - 1);
-
-      setPokemonInput("");
+      if (point === 0) {
+        toast.error(`앗 야생 포켓몬이 도망가버렸다!`);
+        whoPokemon();
+        getPokemon();
+        setPokemonInput("");
+      } else {
+        setPoint(point - 1);
+        toast.error(`앗 야생 포켓몬이 도망가버렸다!`);
+        whoPokemon();
+        getPokemon();
+        setPokemonInput("");
+      }
     }
   };
 
