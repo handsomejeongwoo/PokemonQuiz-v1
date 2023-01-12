@@ -1,7 +1,5 @@
 import "./App.css";
 import React from "react";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import * as P from "./Pages";
 import { BrowserRouter } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";

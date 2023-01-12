@@ -93,7 +93,7 @@ const MainPage = () => {
   }, [point]);
 
   return (
-    <dic>
+    <div>
       <S.Container>
         {middel && (
           <S.PokemonWrap>
@@ -207,7 +207,7 @@ const MainPage = () => {
           )}
         </S.DownBall>
       </S.Container>
-    </dic>
+    </div>
   );
 };
 
